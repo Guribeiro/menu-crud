@@ -1,4 +1,4 @@
-package com.example.cardapio.food.dtos;
+package com.example.cardapio.modules.foods.dtos;
 
 public record RequestUpdateFoodDTO(
 
