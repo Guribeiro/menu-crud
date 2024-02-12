@@ -1,9 +1,9 @@
-package com.example.cardapio.controller;
+package com.example.cardapio.modules.foods.controllers;
 
-import com.example.cardapio.food.Food;
-import com.example.cardapio.food.FoodRepository;
-import com.example.cardapio.food.dtos.RequestCreateFoodDTO;
-import com.example.cardapio.food.dtos.RequestUpdateFoodDTO;
+import com.example.cardapio.modules.foods.models.Food;
+import com.example.cardapio.modules.foods.repositories.FoodRepository;
+import com.example.cardapio.modules.foods.dtos.RequestCreateFoodDTO;
+import com.example.cardapio.modules.foods.dtos.RequestUpdateFoodDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

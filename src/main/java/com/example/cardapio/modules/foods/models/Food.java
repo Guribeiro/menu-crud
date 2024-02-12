@@ -1,6 +1,6 @@
-package com.example.cardapio.food;
+package com.example.cardapio.modules.foods.models;
 
-import com.example.cardapio.food.dtos.RequestCreateFoodDTO;
+import com.example.cardapio.modules.foods.dtos.RequestCreateFoodDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
