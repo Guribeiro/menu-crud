@@ -1,6 +1,7 @@
 package com.example.cardapio.modules.users.models;
 
 import com.example.cardapio.modules.users.dtos.RequestCreateUserDTO;
+import com.example.cardapio.modules.users.dtos.RequestRegisterUserDTO;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -29,6 +30,13 @@ public class User implements UserDetails {
         this.password = createUserDTO.password();
         this.role = createUserDTO.role();
     }
+
+    public User(RequestRegisterUserDTO registerUserDTO) {
+        this.username = registerUserDTO.username();
+        this.password = registerUserDTO.password();
+        this.role = registerUserDTO.role();
+    }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
