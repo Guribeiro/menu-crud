@@ -1,6 +1,6 @@
 package com.example.cardapio.modules.foods.dtos;
 
-public record RequestUpdateFoodDTO(
+public record UpdateFoodServiceDTO(
         Long id,
         String title,
         String image,
