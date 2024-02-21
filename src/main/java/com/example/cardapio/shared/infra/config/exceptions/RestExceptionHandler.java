@@ -1,6 +1,7 @@
 package com.example.cardapio.shared.infra.config.exceptions;
 
 import com.example.cardapio.modules.foods.exceptions.FoodNotFoundException;
+import com.example.cardapio.modules.foods.exceptions.FoodTitleAlreadyExistsException;
 import com.example.cardapio.modules.users.exceptions.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
@@ -23,6 +24,14 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     private ResponseEntity<ProblemDetail> foodNotFoundException(FoodNotFoundException exception) {
 
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, exception.getMessage());
+
+        return ResponseEntity.status(problemDetail.getStatus()).body(problemDetail);
+    }
+
+    @ExceptionHandler(FoodTitleAlreadyExistsException.class)
+    private ResponseEntity<ProblemDetail> foodTitleAlreadyExistsException(FoodTitleAlreadyExistsException exception){
+
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, exception.getMessage());
 
         return ResponseEntity.status(problemDetail.getStatus()).body(problemDetail);
     }
